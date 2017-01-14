@@ -17,4 +17,4 @@ FlavinDB
     * `source venv/bin/activate`
 3. Install the requirements
     * `pip3 install -r requirements.txt`
-    * NOTE for OS X users: install `libpng` and `freetype` via brew if you get a `Command "python setup.py egg_info" failed with error code 1` error when trying to install matplotlib. See http://stackoverflow.com/questions/9829175/pip-install-matplotlib-error-with-virtualenv for more details.
+    * NOTE for OS X users: install `libpng` and `freetype` via brew if you get a `Command "python setup.py egg_info" failed with error code 1` error when trying to install matplotlib. See [here](http://stackoverflow.com/questions/9829175/pip-install-matplotlib-error-with-virtualenv) for more details.
