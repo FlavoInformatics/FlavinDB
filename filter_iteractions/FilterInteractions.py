@@ -3,7 +3,9 @@ import numpy as np
 from biopandas.pdb import PandasPDB
 
 # module specific packages
-from physical_constants import vdW_radii, vdW_bounds
+# FIXME: generally a bad idea to do relative imports, but doing this for now so PyCharm stops complaining
+from .physical_constants import vdW_radii, vdW_bounds
+
 
 def _make_distance_comparator(origin):
     """
@@ -18,6 +20,8 @@ def _make_distance_comparator(origin):
             Returns the Euclidean Distance between two points in 3D space
             :param point pandas.core.Series.Series: the point we want to get the distance for
         """
+
+        # TODO: make this smarter
         x, y, z = point[keys]
         net_x, net_y, net_z = abs(x - x_o), abs(y - y_o), abs(z - z_o)
 
@@ -25,13 +29,12 @@ def _make_distance_comparator(origin):
 
             distance = np.sqrt(net_x **2 + net_y ** 2 + net_z ** 2)
 
-            if distance < vdW_bounds['upper'] and distance > vdW_bounds['lower']
+            if distance < vdW_bounds['upper'] and distance > vdW_bounds['lower']:
                 return distance
 
         return np.nan
 
     return distance_comparator
-
 
 
 class Filter():
@@ -45,13 +48,13 @@ class Filter():
         src: https://github.com/antoniomika/FlavinDB/blob/filter-interactions/FilterInteractions.ipynb
     """
 
-    def __init__(self, pandas_pdb=None, filename="", key_atoms=[]):
+    def __init__(self, pandas_pdb=None, filename="", key_atoms=None):
         """
             :paramter pandas_pdb optionally pass in a set of dataframes read in from a PDB file in the BioPandas format
             :filename pass a file on disk or in the pdb to be filtered
             :key_atoms a list of atom numbers to be checked for in the atom
         """
-        if pandas_pdb != None:
+        if pandas_pdb is not None:
             self.protein_dfs = pandas_pdb
         elif filename != "":
             try:
@@ -70,7 +73,8 @@ class Filter():
             raise ValueError("key_atoms must be passed in as a list() of atom numbers")
         self.neighbors = []
 
-    def filter_distance(self, key_atoms=None):
+
+    def filter_distance(self):
         """
             filter_distance() requires that the protein is loaded into the object
             and will return a list of HETATMS that are within distance of the key
@@ -83,29 +87,29 @@ class Filter():
         if len(self.neighbors):
             return self.neighbors
 
-        if self.protein_dfs == None:
+        if not self.protein_dfs:
             raise ValueError("No protein loaded into Filter object.")
 
+        hetatms = self.protein_dfs.df["HETATM"]
 
-        hetatms = hetatms = self.protein_dfs.df["HETATM"]
-        coords = hetatms[["x_coord", "y_coord", "z_coord"]]
+        # list of atom numbers that we want to find neighbors for
+        # if no key atoms given, brute force every combination of atoms
+        interesting_atoms = self.key_atoms if self.key_atoms else hetatms.atom_number
 
+        for atom_number in interesting_atoms:
+            atom_data = hetatms[hetatms.atom_number == atom_number]
 
-        for row_idx in range(len(coords)):
-            atom = coords.iloc[row_idx]
-
-            if key_atoms and not (hetatms['atom_number'].iloc[row_idx] in key_atoms):
-                continue
-
-            distance_func = _make_distance_comparator(atom)
+            distance_func = _make_distance_comparator(atom_data)
 
             # reduce the dataframe of x,y,z to distance from the selected atom
             distance_from_atom_df = hetatms.apply(distance_func, axis=1)
             hetatms["distance"] = distance_from_atom_df
 
+            # sort relevant atoms based on distance
             valid_atom_indices = hetatms["distance"].notnull()
             valid_key_hetatms = hetatms[valid_atom_indices].sort_values(by=["distance"], ascending=True)
 
-            # we don't want massive dataframes stiing around in memory so just store the indices of the key heteroatoms
-            self.neighbors.append((hetatms["atom_number"].iloc[row_idx], valid_key_hetatms.index.tolist()))
+            # we don't want massive dataframes sitting around in memory so just store the indices of the key heteroatoms
+            self.neighbors.append((atom_number, valid_key_hetatms.index.tolist()))
+
         return self.neighbors
