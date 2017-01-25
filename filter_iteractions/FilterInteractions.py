@@ -3,14 +3,17 @@ import numpy as np
 from biopandas.pdb import PandasPDB
 
 # module specific packages
-from physical_constants import vdW_radii, vdW_bounds
+from physical_constants import vdW_radii, vdW_bounds, get_vdW_radius
 
-def _make_distance_comparator(origin):
+def _make_distance_comparator(origin, tolerance=0.2):
     """
         Creates a function to that determines the distance between two heatms in the dataframe
         :param origin pandas.core.series.Series: the origin point, specified as a x, y, z, tuple
+        :param tolerance float64: the amount of tollerance (in Angstroms) acceptable in calculating
+            whether or not the molecules are within an acceptable distance
     """
     keys = ["x_coord", "y_coord", "z_coord"]
+    vdW_keyatom = get_vdW_radius(origin['atom_name']) # FIXME: misclassifies water (ie the O in CO2 is different that O in H2O)
     x_o, y_o, z_o = origin[keys]
 
     def distance_comparator(point):
@@ -25,8 +28,9 @@ def _make_distance_comparator(origin):
             and net_z < vdW_bounds['lower']:
 
             distance = np.sqrt(net_x **2 + net_y ** 2 + net_z ** 2)
+            expected_weak_iteraction_dist = get_vdW_radius(point['atom_name']) + vdW_keyatom
 
-            if distance < vdW_bounds['upper'] and distance > vdW_bounds['lower']
+            if distnce < expected_weak_iteraction_dist + tolerance and distance > expected_weak_iteraction_dist - tolerance:
                 return distance
 
         return np.nan

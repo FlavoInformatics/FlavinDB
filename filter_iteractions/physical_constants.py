@@ -62,12 +62,35 @@ vdW_radii = dict({
         'SE':		np.nan,
 
 })
+
+"""
+    :param atom_name accepts the radius of the atom's vdW in Angstroms (10^-10)
+    :param is_water bool defaults to false
+        returns the oxygen vdW in water when set to true, ignores atom name input
+        returns the oxygen vdW in other chains otherwise
+
+    returns the radius of atom
+"""
+def get_vdW_radius(atom_name, is_water=False):
+    if is_water:
+        return vdw_radii['water']['O']
+
+    if atom_name in vdw_radii:
+        return vdw_radii[atom_name]
+    elif atom_name in vdw_radii['Isoalloxazine']:
+        return vdw_radii['Isoalloxazine'][atom_name]
+    else:
+        raise ValueError("Error: atom_name not found in vdW table")
+
 """
     max or min combination of two atoms experiencing van der Waal's forces
     calculated by
             max/min vdw_radii +/- artificial error
     Artificial error constant added in order to avoid issues in measurements
     and floating point error.
+
+    *** NOTE: depricated and hacky - only use for prototyping
+
 """
 vdW_bounds = dict({
     'upper': max(vdW_radii.values(), vdW_radii['Isoalloxazine'].values()) * 2 + 0.01,
