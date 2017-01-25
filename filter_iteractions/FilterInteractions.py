@@ -3,7 +3,9 @@ import numpy as np
 from biopandas.pdb import PandasPDB
 
 # module specific packages
-from physical_constants import vdW_radii, vdW_bounds
+# FIXME: generally a bad idea to do relative imports, but doing this for now so PyCharm stops complaining
+from .physical_constants import vdW_radii, vdW_bounds
+
 
 def _make_distance_comparator(origin):
     """
@@ -18,20 +20,22 @@ def _make_distance_comparator(origin):
             Returns the Euclidean Distance between two points in 3D space
             :param point pandas.core.Series.Series: the point we want to get the distance for
         """
+
+        # TODO: make this smarter
         x, y, z = point[keys]
         net_x, net_y, net_z = abs(x - x_o), abs(y - y_o), abs(z - z_o)
 
-        if net_x < vdW_bounds['lower'] and net_y < vdW_bounds['lower']
-            and net_z < vdW_bounds['lower']:
+        if net_x < vdW_bounds['lower'] and net_y < vdW_bounds['lower'] and net_z < vdW_bounds['lower']:
 
             distance = np.sqrt(net_x **2 + net_y ** 2 + net_z ** 2)
 
-            if distance < vdW_bounds['upper'] and distance > vdW_bounds['lower']
+            if distance < vdW_bounds['upper'] and distance > vdW_bounds['lower']:
                 return distance
 
         return np.nan
 
     return distance_comparator
+
 
 class Filter():
     """
@@ -44,13 +48,13 @@ class Filter():
         src: https://github.com/antoniomika/FlavinDB/blob/filter-interactions/FilterInteractions.ipynb
     """
 
-    def __init__(self, pandas_pdb=None, filename="", key_atoms=[]):
+    def __init__(self, pandas_pdb=None, filename="", key_atoms=None):
         """
             :paramter pandas_pdb optionally pass in a set of dataframes read in from a PDB file in the BioPandas format
             :filename pass a file on disk or in the pdb to be filtered
             :key_atoms a list of atom numbers to be checked for in the atom
         """
-        if pandas_pdb != None:
+        if pandas_pdb is not None:
             self.protein_dfs = pandas_pdb
         elif filename != "":
             try:
@@ -69,6 +73,7 @@ class Filter():
             raise ValueError("key_atoms must be passed in as a list() of atom numbers")
         self.neighbors = []
 
+
     def filter_distance(self):
         """
             filter_distance() requires that the protein is loaded into the object
@@ -79,66 +84,32 @@ class Filter():
             Will cache the results in neighbors and will only return the results
             in neighbors if this function has already been run for this algorithm.
         """
-        if self.neighbors != []:
-            return neighbors
+        if len(self.neighbors):
+            return self.neighbors
 
-        if self.protein_dfs == None:
+        if not self.protein_dfs:
             raise ValueError("No protein loaded into Filter object.")
 
-        hetatms = hetatms = self.protein_dfs.df["HETATM"]
-        coords = hetatms[["x_coord", "y_coord", "z_coord"]]
+        hetatms = self.protein_dfs.df["HETATM"]
 
-        for row_idx in range(len(coords)):
-            atom = coords.iloc[row_idx]
+        # list of atom numbers that we want to find neighbors for
+        # if no key atoms given, brute force every combination of atoms
+        interesting_atoms = self.key_atoms if self.key_atoms else hetatms.atom_number
 
-            if key_atoms and not (hetatms['atom_number'].iloc[row_idx] in key_atoms):
-                continue
+        for atom_number in interesting_atoms:
+            atom_data = hetatms[hetatms.atom_number == atom_number]
 
-            distance_func = _make_distance_comparator(atom)
+            distance_func = _make_distance_comparator(atom_data)
 
             # reduce the dataframe of x,y,z to distance from the selected atom
             distance_from_atom_df = hetatms.apply(distance_func, axis=1)
+            hetatms["distance"] = distance_from_atom_df
 
-            # drop entries that are beyond the bounded distane (represented by nan)
-            distance_from_atom_df = hetatms[hetatms['distance'] != np.nan]
+            # sort relevant atoms based on distance
+            valid_atom_indices = hetatms["distance"].notnull()
+            valid_key_hetatms = hetatms[valid_atom_indices].sort_values(by=["distance"], ascending=True)
 
-            # sort by distance
-            sorted_distance = np.sort(distance_from_atom_df)
-            sorted_distance = sorted_distance
+            # we don't want massive dataframes sitting around in memory so just store the indices of the key heteroatoms
+            self.neighbors.append((atom_number, valid_key_hetatms.index.tolist()))
 
-            # get the original indices from the dataframe after sorting to index into hetratm dataframe
-            sorted_indices = np.argsort(distance_from_atom_df)
-            sorted_indices = sorted_indices
-
-            # creating a copy so the runtime shuts up and we don't have any issues
-            # with accidentally modifying the original hetatm dataframe
-            key_hetatm_data = hetatms.iloc[sorted_indices].copy()
-            key_hetatm_data['distance'] = sorted_distance
-
-            # drop the col telling us we're dealing with HETATM
-            key_hetatm_data.drop("record_name", axis=1, inplace=True)
-
-            # move the atom_name col to the front for writing it to file
-            cols = ["atom_name"] + [col for col in key_hetatm_data if col != "atom_name"]
-            key_hetatm_data = key_hetatm_data[cols]
-
-            # add this to our results list
-            self.neighbors.append((hetatms["atom_number"].iloc[row_idx], key_hetatm_data))
         return self.neighbors
-
-    def plot(self, x=protein_dfs.df["HETATM"]['x_coord'],
-                    y=protein_dfs.df["HETATM"]['y_coord'],
-                    z=protein_dfs.df["HETATM"]['z_coord'], label=None):
-        # plot 3D representation of protein, because why not
-        fig = plt.figure()
-        ax = fg.add_subplot(111, projection='3d')
-        ax.scatter(x, y, z)
-        ax.set_xlabel("x axis")
-        ax.set_ylabel("y axis")
-        ax.set_zlabel("z axis")
-        if label == "":
-            ax.set_title("Visualization of 2-DOR")
-        else:
-            ax.set_title(label)
-        plt.tight_layout()
-        plt.show()

@@ -17,8 +17,8 @@ import numpy as np
 vdW_radii = dict({
     "water" : {
         'O': 1.72
-    }
-    "Isoalloxazine" {
+    },
+    "Isoalloxazine": {
         'N1':		1.82,
         'C2':		1.91,
         'O2':		1.66,
@@ -37,7 +37,7 @@ vdW_radii = dict({
         'C9A':	    1.91,
         'N10':	    1.82,
         'C10':		1.91,
-    }
+    },
         'N':        1.82,
         'C':		1.91,
         'O':		1.66,
