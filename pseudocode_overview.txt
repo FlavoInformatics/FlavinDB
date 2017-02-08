@@ -1,0 +1,32 @@
+DATA ENTRY
+interface to add additional information to the data base
+1. list of PDB file names
+2. new flavin key
+3. chemical properties
+
+adding new PDB file names will call the following process:
+1. compare against list of PDB file names already in the DB so we avoid duplicates
+2. for the subset of new files:
+	a. for each flavin in the PDB:
+		i. assign a unique ID
+		ii. for each of the 18 atoms of the isoalloxazine, create a listof the atoms that interact with this it
+		iii. push new flavin to the DB
+3. update the list of PDB files in the database.
+
+
+DATA BASE
+1. list of PDB file names whose flavins are in the DB
+2. list of flavin keys
+3. flavin structures captured as follows:
+	a. unique ID representing PDB file and flavin w/in the file
+	b. 18 x ? array of atoms close to the isoalloxazine
+4. additional chemical properties 
+	a. listed with unique flavin ID
+	b. format more ambigous for now
+
+
+CLUSTERING QUERY
+input: key atoms of interest:
+plot the flavins by the list of atoms interacting with these key elements, return statistics on known chemical properties by these clusers
+input: chemical properties of interest:
+
