@@ -4,7 +4,7 @@ from biopandas.pdb import PandasPDB
 
 # module specific packages
 # FIXME: generally a bad idea to do relative imports, but doing this for now so PyCharm stops complaining
-from .physical_constants import vdW_radii, vdW_bounds, get_vdW_radius
+from physical_constants import vdW_radii, vdW_bounds, get_vdW_radius
 
 def _make_distance_comparator(origin, tolerance=0.2):
     """
@@ -29,7 +29,7 @@ def _make_distance_comparator(origin, tolerance=0.2):
 
             distance = np.sqrt(net_x **2 + net_y ** 2 + net_z ** 2)
             expected_weak_iteraction_dist = get_vdW_radius(point['atom_name']) + vdW_keyatom
-            if distnce < expected_weak_iteraction_dist + tolerance and distance > expected_weak_iteraction_dist - tolerance:
+            if distance < expected_weak_iteraction_dist + tolerance and distance > expected_weak_iteraction_dist - tolerance:
                 return distance
 
         return np.nan
@@ -90,26 +90,26 @@ class Filter():
         if not self.protein_dfs:
             raise ValueError("No protein loaded into Filter object.")
 
-        hetatms = self.protein_dfs.df["HETATM"]
+        all_atoms = pd.concat([self.protein_dfs.df['ATOM'], self.protein_dfs.df["HETATM"]])
 
         # list of atom numbers that we want to find neighbors for
         # if no key atoms given, brute force every combination of atoms
-        interesting_atoms = self.key_atoms if self.key_atoms else hetatms.atom_number
+        interesting_atoms = self.key_atoms if self.key_atoms else all_atoms.atom_number
 
         for atom_number in interesting_atoms:
-            atom_data = hetatms[hetatms.atom_number == atom_number]
+            atom_data = all_atoms[all_atoms.atom_number == atom_number]
 
             distance_func = _make_distance_comparator(atom_data)
 
             # reduce the dataframe of x,y,z to distance from the selected atom
-            distance_from_atom_df = hetatms.apply(distance_func, axis=1)
-            hetatms["distance"] = distance_from_atom_df
+            distance_from_atom_df = all_atoms.apply(distance_func, axis=1)
+            all_atoms["distance"] = distance_from_atom_df
 
             # sort relevant atoms based on distance
-            valid_atom_indices = hetatms["distance"].notnull()
-            valid_key_hetatms = hetatms[valid_atom_indices].sort_values(by=["distance"], ascending=True)
+            valid_atom_indices = all_atoms["distance"].notnull()
+            valid_key_atms = all_atoms[valid_atom_indices].sort_values(by=["distance"], ascending=True)
 
             # we don't want massive dataframes sitting around in memory so just store the indices of the key heteroatoms
-            self.neighbors.append((atom_number, valid_key_hetatms.index.tolist()))
+            self.neighbors.append((atom_number, valid_key_atms.index.tolist()))
 
         return self.neighbors

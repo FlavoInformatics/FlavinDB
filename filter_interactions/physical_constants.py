@@ -73,12 +73,12 @@ vdW_radii = dict({
 """
 def get_vdW_radius(atom_name, is_water=False):
     if is_water:
-        return vdw_radii['water']['O']
+        return vdW_radii['water']['O']
 
-    if atom_name in vdw_radii:
-        return vdw_radii[atom_name]
-    elif atom_name in vdw_radii['Isoalloxazine']:
-        return vdw_radii['Isoalloxazine'][atom_name]
+    if atom_name in vdW_radii:
+        return vdW_radii[atom_name]
+    elif atom_name in vdW_radii['Isoalloxazine']:
+        return vdW_radii['Isoalloxazine'][atom_name]
     else:
         raise ValueError("Error: atom_name not found in vdW table")
 
@@ -92,9 +92,13 @@ def get_vdW_radius(atom_name, is_water=False):
     *** NOTE: depricated and hacky - only use for prototyping
 
 """
+# vdW_bounds = dict({
+#     'upper': max(max(vdW_radii.values()), max(vdW_radii['Isoalloxazine'].values())) * 2 + 0.01,
+#     'lower': min(min(vdW_radii.values()), min(vdW_radii['Isoalloxazine'].values())) * 2 + 0.01,
+# })
 vdW_bounds = dict({
-    'upper': max(vdW_radii.values(), vdW_radii['Isoalloxazine'].values()) * 2 + 0.01,
-    'lower': min(vdW_radii.values(), vdW_radii['Isoalloxazine'].values()) * 2 + 0.01,
+    'upper': 2 * 2 + 0.01,
+    'lower': 1.66 * 2 + 0.01,
 })
 
 #FIXME - update what PDB speak is
