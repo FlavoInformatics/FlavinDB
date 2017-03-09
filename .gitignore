@@ -87,3 +87,6 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+elec-potential-calc/pdb2pqr-osx-bin64-2.1.0
+
