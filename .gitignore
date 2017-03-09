@@ -91,3 +91,6 @@ ENV/
 elec-potential-calc/pdb2pqr
 *idea
 .DS_Store
+
+# PyCham project settings
+.idea
