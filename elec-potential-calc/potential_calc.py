@@ -40,6 +40,8 @@ def __get_dx_file(pdb_code, output_folder):
     
     subprocess.call(["pdb2pqr", "--ff=amber", "--apbs-input", "--ph-calc-method=propka", "--ligand={}".format(results_folder_path), pdb_code,
                     os.path.join(folder_path_FMN, "{}.pqr".format(pdb_code))])
+
+    subprocess.call
     
     with cd(folder_path_FAD):
         subprocess.call(["apbs", "{}.in".format(pdb_code)])
