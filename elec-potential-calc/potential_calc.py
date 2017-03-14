@@ -32,7 +32,7 @@ def __get_dx_file(pdb_code, output_folder):
     # TODO: create a PDB2PQRArgsBundle that will hold all pdb2pqr args info and will have a get_args() function to
     # populate the args list passed to the subprocess call, That way we don't have to hardcode args and it will be more
     # flexible for future use
-    subprocess.call(["pdb2pqr", "--ff=parse", "--apbs-input", "--ph-calc-method=propka", pdb_code,
+    subprocess.call(["pdb2pqr", "--ff=amber", "--apbs-input", "--ph-calc-method=propka", "--ligand={}".format(results_folder_path) pdb_code,
                     os.path.join(results_folder_path, "{}.pqr".format(pdb_code))])
 
     with cd(results_folder_path):
