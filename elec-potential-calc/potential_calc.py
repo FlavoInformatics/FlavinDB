@@ -25,7 +25,10 @@ def __get_dx_file(pdb_code, output_folder):
     print "--------------------------"
     print "Calculating potential for {}".format(pdb_code)
 
-    results_folder_path = os.path.join(output_folder, pdb_code)
+    results_folder_path = os.path.join(output_folder, pdb_code,)
+    folder_path_FAD = os.path.join(results_folder_path, "FAD")
+    folder_path_FMN = os.path.join(results_folder_path, "FMN")
+
     if not os.path.exists(results_folder_path):
         os.makedirs(results_folder_path)
 
@@ -34,6 +37,10 @@ def __get_dx_file(pdb_code, output_folder):
     # flexible for future use
     subprocess.call(["pdb2pqr", "--ff=amber", "--apbs-input", "--ph-calc-method=propka", "--ligand={}".format(results_folder_path), pdb_code,
                     os.path.join(results_folder_path, "{}.pqr".format(pdb_code))])
+
+
+    
+
 
     with cd(results_folder_path):
         subprocess.call(["apbs", "{}.in".format(pdb_code)])
