@@ -36,13 +36,15 @@ def __get_dx_file(pdb_code, output_folder):
     # populate the args list passed to the subprocess call, That way we don't have to hardcode args and it will be more
     # flexible for future use
     subprocess.call(["pdb2pqr", "--ff=amber", "--apbs-input", "--ph-calc-method=propka", "--ligand={}".format(results_folder_path), pdb_code,
-                    os.path.join(results_folder_path, "{}.pqr".format(pdb_code))])
-
-
+                    os.path.join(folder_path_FAD, "{}.pqr".format(pdb_code))])
     
+    subprocess.call(["pdb2pqr", "--ff=amber", "--apbs-input", "--ph-calc-method=propka", "--ligand={}".format(results_folder_path), pdb_code,
+                    os.path.join(folder_path_FMN, "{}.pqr".format(pdb_code))])
+    
+    with cd(folder_path_FAD):
+        subprocess.call(["apbs", "{}.in".format(pdb_code)])
 
-
-    with cd(results_folder_path):
+    with cd(folder_path_FMN):
         subprocess.call(["apbs", "{}.in".format(pdb_code)])
 
 
