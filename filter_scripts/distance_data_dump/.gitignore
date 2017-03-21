@@ -1,0 +1,4 @@
+*.pyc
+error_log/
+error_*.txt
+

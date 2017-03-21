@@ -15,9 +15,6 @@ import numpy as np
     map ascii names to Van Der Waals Radii in 10^(-10)m.
 '''
 vdW_radii = dict({
-    "water" : {
-        'O': 1.72
-    },
     "Isoalloxazine": {
         'N1':		1.82,
         'C2':		1.91,
@@ -38,6 +35,7 @@ vdW_radii = dict({
         'N10':	    1.82,
         'C10':		1.91,
     },
+        'HOH': 1.72,
         'N':        1.82,
         'C':		1.91,
         'O':		1.66,
@@ -71,16 +69,17 @@ vdW_radii = dict({
 
     returns the radius of atom
 """
-def get_vdW_radius(atom_name, is_water=False):
-    if is_water:
-        return vdW_radii['water']['O']
+def get_vdW_radius(atom_name, ligand=None):
+    if ligand in ['FMN', 'FAD']:
+        return vdW_radii['Isoalloxazine'][atom_name]
 
     if atom_name in vdW_radii:
         return vdW_radii[atom_name]
     elif atom_name in vdW_radii['Isoalloxazine']:
         return vdW_radii['Isoalloxazine'][atom_name]
     else:
-        raise ValueError("Error: atom_name not found in vdW table")
+        print ("Warning: atom_name not found in vdW table: ", atom_name, " ", ligand)
+        return np.inf
 
 """
     max or min combination of two atoms experiencing van der Waal's forces
