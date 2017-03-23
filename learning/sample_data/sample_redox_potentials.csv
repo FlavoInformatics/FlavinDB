@@ -1,0 +1,190 @@
+PDB ID,Enzyme,Mutation,Type,crystallization pH,redox pH,E1(mV),E2(mV),EM(mV),Oxidation State,Ligand
+1EGE,Acyl CoA Dehydrogenase (Medium Chain),WT,FAD,7,7.6,,,-114,oxidized,no
+3MDE,Acyl CoA Dehydrogenase (Medium Chain),WT,FAD,7,7.6,,,-26,oxidized,OCTANOYL-COENZYME A 
+3MDD,Acyl CoA Dehydrogenase (Medium Chain),WT,FAD,7,7.1,-134,-94,-114,oxidized,no
+1UDY,Acyl CoA Dehydrogenase (Medium Chain),WT,FAD,7,7.1,,,-122,oxidized,3-THIAOCTANOYL-COENZYME A
+1JNZ,Adenylylsulfate Reductase ,WT,FAD,4.8,7.0,,,-45,oxidized,sulfite ion
+2FJE,Adenylylsulfate Reductase ,WT,FAD,4.8,,,,-45,oxidized,no
+1CJC,Adrenodoxin Reductase,WT,FAD,6.5,7.5,,,-291,oxidized,no
+1E6E,Adrenodoxin Reductase,WT,FAD,7.4,7.5,,,-295,oxidized,no
+1E1M,Adrenodoxin Reductase,WT,FAD,6.5,7.5,,,-291,oxidized,NADPH
+1GV4,Apoptosis-inducing Factor,WT,FAD,7.8,7.5,,,-308,oxidized,no
+1OQC,Augmeneter of Liver Regeneration,WT,FAD,-,7.5,,,-178,,
+1BUC,Butyryl-CoA Dehydrogenase,WT,FAD,,7.0,,,-79,oxidized,CoA
+1IJH,Cholesterol oxidase,N485L,FAD,5.2,7.0,-300,-408,-354,oxidized,no
+1COY,Cholesterol oxidase,WT,FAD,7,7.5,-179,-255,-217,oxidized,3-BETA-HYDROXY-5-ANDROSTEN-17-ONE
+1CBO,Cholesterol oxidase,WT,FAD,5.2,7.0,-222,-334,-278,oxidized,no
+1B4V,Cholesterol oxidase,WT,FAD,5.2,7.5,-179.1,-255.3,-217,oxidized,no
+1N1P,Cholesterol oxidase,WT,FAD,7.4,7.5,-179.1,-255.3,-217,oxidized,no
+1N4W,Cholesterol oxidase,WT,FAD,7.3,7.5,-179.1,-255.3,-217,oxidized,no
+1N4V,Cholesterol oxidase,WT,FAD,5.8,7.5,-179.1,-255.3,-217,oxidized,no
+1BVY,Cytochrome P450-BM3,WT,FMN,6.8,7.0,-216,-177,-196,oxidized,no
+1EVI,D-amino acid oxidase,WT,FAD,6.3,8.5,-98,-204,-151,hydroquinone,no
+1VE9,D-amino acid oxidase,WT,FAD,6.3,8.5,-260,-140,-257,oxidized,benzoate
+1KIF,D-amino acid oxidase,WT,FAD,8.3,7.0,,,-147,oxidized,benzoate
+1C0I,D-amino acid oxidase,WT,FAD,7.5,7.0,-47,-131,-109,oxidized, 6-AMINOBENZOIC ACID
+1C0K,D-amino acid oxidase,WT,FAD,7.5,7.5,,,-65,oxidized,L-lactate
+1KNR,L-Aspartate Oxidase,R386L,FAD,7.5,7.0,,,-222,oxidized,no
+1F76,Dihydroorotate Dehydrogenase,WT,FMN,3.5,7.0,,,-310,oxidized,"Fromic Acid, Oric acid"
+1DOR,Dihydroorotate Dehydrogenase,WT,FMN,8.5,7.0,,,-235,oxidized,no
+1JQV,Dihydroorotate Dehydrogenase A,K213E,FMN,7.5-9.0,7.0,,,-251,oxidized,OROTIC ACID 
+1JUB,Dihydroorotate Dehydrogenase A,K136E,FMN,7.5-9.0,7.0,,,-245,oxidized,no
+1JUE,Dihydroorotate Dehydrogenase A,WT,FMN,7.5-9.0,7.0,,,-245,oxidized,ACETIC ACID 
+1OVD,Dihydroorotate Dehydrogenase A,K136E,FMN,7.5-9.0,7.0,,,-245,oxidized,OROTIC ACID 
+1EP1,Dihydroorotate Dehydrogenase B,WT,FMN ,4.6,7.0,-301,-252,-276.5,oxidized,no
+1EP1,Dihydroorotate Dehydrogenase B,WT,FAD,4.6,7.0,-312,-297,-304.5,oxidized,no
+1DNP,DNA photolyase,WT,FAD,7.6,7.0,,,16,oxidized,"5,10-METHENYL-6,7,8-TRIHYDROFOLIC ACID "
+1QRD,Quinone reductase,WT,FAD,7,7.0,-200.5,-117.5,-159,oxidized,no
+1O96,Electron Transfer Flavoprotein,WT,FAD,9,7.0,196,-197,0,oxidized,no
+1EFP,Electron Transfer Flavoprotein,WT,FAD,5.8,7.0,7,-42,-21,oxidized,AMP (no red effect)
+1EFV,Electron Transfer Flavoprotein,WT,FAD,7,7.5,37,25,31,oxidized,no
+1QUE,Ferredoxin:NADP reductase,WT,FAD,5.5,7.0,-311,-377,-344,oxidized,sulfate ion
+1GJR,Ferredoxin:NADP reductase,WT,FAD,5,8.0,-338,-325,-312,,NADP
+1B2R,Ferredoxin:NADP reductase,E301A,FAD,8,8.0,-210,-358,-284,oxidized,sulfate ion
+1BJK,Ferredoxin:NADP reductase,R264E,FAD,,7.0,-311,nd,nd,oxidized,no
+1GR1,Ferredoxin:NADP reductase,E139K,FAD,5.5,8.0,-341,-311,-326,,no
+1QH0,Ferredoxin:NADP reductase,"L76D, L78D",FAD,5,8.0,,,-317,oxidized,sulfate ion
+1QGZ,Ferredoxin:NADP reductase,L78D,FAD,5,8.0,,,-302,oxidized,sulfate ion
+1H85,Ferredoxin:NADP reductase,V136L,FAD,5,8.0,,,-305,oxidized,sulfate ion
+1A8P,Ferredoxin:NADP reductase,WT,FAD,5.5,7.4,,,-327,oxidized,no
+1JB9,Ferredoxin:NADP reductase,WT,FAD,6,7.0,,,-401,oxidized,no
+2BGJ,Ferredoxin:NADP reductase,WT,FAD,6.5,8.0,-384,-377,-381,oxidized,no
+2BGI,Ferredoxin:NADP reductase,WT,FAD,6.5,8.0,-384,-377,-381,oxidized,no
+1FNB,Ferredoxin:NADP reductase,WT,FAD,,7.0,-350,-335,-342,oxidized,no
+1FNC,Ferredoxin:NADP reductase,WT,FAD,,7.0,-350,-335,-342,reduced,AMP (no red effect)
+1FND,Ferredoxin:NADP reductase,WT,FAD,,,,,-339,oxidized,ADENOSINE-2'-5'-DIPHOSPHATE
+1BKJ,Flavin Reductase P,WT,FMN,,7.0,,,-254,oxidized,no
+1DX9,flavodoxin,W57A,FMN,6,,-173,-417,-295,nd,no
+1OBO,flavodoxin,W57L,FMN,6,7.0,-212,-407,-309.5,oxidized,no
+1OBV,flavodoxin,Y94F,FMN,6,7.0,-186,-436,-311,oxidized,no
+1RCF,flavodoxin,WT,FMN,,7.0,-212,-436,-324,oxidized,no
+1FLV,flavodoxin,WT,FMN,,7.0,-196,-425,-310.5,oxidized,
+1CZN,flavodoxin,WT,FMN,6.8,7.0,-221,-442,-331.5,oxidized,no
+1CZU,flavodoxin,WT,FMN,6.8,7.0,-221,-442,-331.5,oxidized,no
+1CZL,flavodoxin,WT,FMN,6.8,7.0,-221,-442,-331.5,semiquinone,no
+1D04,flavodoxin,WT,FMN,6.8,7.0,-221,-442,-331.5,hydroquinone,no
+1CZR,flavodoxin,D90N,FMN,6.8,7.0,-206,-401,-303.5,oxidized,no
+1CZK,flavodoxin,D100N,FMN,6.8,7.0,-210,-417,-313.5,oxidized,no
+1DO3,flavodoxin,N58G,FMN,6.8,7.0,-175,-468,-321.5,oxidized,no
+1CZH,flavodoxin,N58G,FMN,6.8,7.0,-175,-468,-321.5,semiquinone,no
+1CZO,flavodoxin,N58G,FMN,,7.0,-175,-468,-321.5,hydroquinone,no
+1OFV,flavodoxin,WT,FMN,6.8,7.0,-221,-442,-331.5,oxidized,no
+1YOB,flavodoxin,C69A,FMN,7,7.0,,,-500,oxidized,sulfate ion
+2FCR,flavodoxin,WT,FMN,,7.0,-222,-370,-296,oxidized,no
+2FOX,flavodoxin,WT,FMN,,7.0,-92,-399,-245.5,semiquinone,no
+5NLL,flavodoxin,WT,FMN,7,7.0,-92,-399,-245.5,oxidized,no
+5ULL,flavodoxin,WT,FMN,6.8,7.0,-92,-399,-245.5,hydroquinone,no
+3NLL,flavodoxin,G57A,FMN,6.8,7.0,-143,-373,-258,oxidized,no
+4NLL,flavodoxin,G57D,FMN,6.8,7.0,-140,-378,-260,oxidized,no
+1FLA,flavodoxin,G57D,FMN,6.8,7.0,-140,-378,-260,hydroquinone,no
+1FVX,flavodoxin,G57N,FMN,6.8,7.0,-162,-372,-267,oxidized,no
+1FLD,flavodoxin,G57T,FMN,6.8,7.0,-270,-320,-295,oxidized,no
+2FLV,flavodoxin,G57T,FMN,6.8,7.0,-270,-320,-295,hydroquinone,no
+2FVX,flavodoxin,G57T,FMN,6.8,7.0,-270,-320,-295,hydroquinone,
+5NUL,flavodoxin,G57T,FMN,6.8,7.0,-270,-320,-295,semiquinone,no
+4NUL,flavodoxin,D58P,FMN,6.8,7.0,-155,-360,-257.5,oxidized,no
+1FLN,flavodoxin,D58P,FMN,6.8,7.0,-155,-360,-257.5,hydroquinone,no
+2FAX,flavodoxin,N137A,FMN,6.8,7.0,-92,-399,-245.5,oxidized,no
+2FDX,flavodoxin,N137A,FMN,6.8,7.0,-92,-399,-245.5,oxidized,no
+6NUL,flavodoxin,N137A,FMN,8.25,7.0,-92,-399,-245.5,hydroquinone,no
+1AHN,flavodoxin,WT,FMN,7,7.0,-254,-433,-343,oxidized,no
+1AG9,flavodoxin,WT,FMN,7,7.0,-254,-433,-343,oxidized,no
+1J8Q,flavodoxin,WT,FMN,7,7.0,-143,-440,-303,oxidized,no
+1J9E,flavodoxin,S35C,FMN,7,7.0,,,-396,oxidized,no
+1J9G,flavodoxin,S35C,FMN,7,7.0,,,-396,oxidized,no
+1FX1,flavodoxin,WT,FMN,,7.0,-143,-440,-303,oxidized,no
+4FX2,flavodoxin,WT,FMN,,7.0,-143,-440,-303,semiquinone,no
+5FX2,flavodoxin,WT,FMN,,7.0,-143,-440,-303,hydroquinone,no
+1BU5,flavodoxin,WT,riboflavin,,6.5,-193,-262,-228,oxidized,no
+1AKQ,flavodoxin,D95A,FMN,,7.0,-166,-424,-285,oxidized,no
+1AKU,flavodoxin,D95A,FMN,9,7.0,-166,-424,-285,semiquinone,no
+1AKV,flavodoxin,D95A,FMN,9,7.0,-166,-424,-285,hydroquinone,no
+1C7E,flavodoxin,D95E,FMN,8.5,7.0,-145,-424,-284.5,oxidized,no
+1C7F,flavodoxin,D95E,FMN,8.5,7.0,-145,-424,-284.5,oxidized,no
+1I1O,flavodoxin,Y98H,FMN,7.3,7.0,-185,-262,-224,oxidized,no
+1F4P,flavodoxin,Y98W,FMN,7.3,7.0,-152,-452,-302,oxidized,no
+1AKR,flavodoxin,G61A,FMN,,7.0,-262,-359,-311,oxidized,no
+1AKW,flavodoxin,G61L,FMN,,7.0,-338,-302,-320,oxidized,no
+1AKT,flavodoxin,G61N,FMN,,7.0,-248,-347,-298,oxidized,no
+1AZL,flavodoxin,G61V,FMN,,7.0,-333,-299,-316,oxidized,no
+1FDR,Flavodoxin reductase,R126Q,FAD,7.5,7.0,-308,-268,-288,oxidized,no
+1GVH,FlavoHemoglobin,WT,FAD,5.1,,,,-150,oxidized,no
+1LQU,FprA,WT,FAD,5.6,7.0,,,-235,oxidized,NADPH
+1FLM,FMN-binding protein,WT,FMN,7.5,7.1,,,-325,oxidized,no
+1GAL,glucose oxidase,WT,FAD,5.6,5.3,-63,-65,-64,oxidized,no
+1GAL,glucose oxidase,WT,FAD,5.6,9.3,-200,-240,-220,oxidized,no
+1SIQ,glutaryl-CoA dehydrogenase,WT,FAD,6.5,7.0,,,-132,oxidized,no
+1EA0,glutamae synthase,WT,FMN,5.6,7.5,,,-237,oxidized,2-OXO-GLUTARIC ACID 
+1GRA,glutathione reductase,WT,FAD,7,6.9,,,-229,oxidized,NO
+1GER,glutathione reductase,WT,FAD,7.5,8.0,,,-393,oxidized,no
+3GRS,glutathione reductase,WT,FAD,7,6.9,,,-229,oxidized,NO
+1BWC,glutathione reductase,WT,FAD,6.9,8.2,,,-393,oxidized,3 (prop 2 Ene 1 Sulfinyl) Propene 1 Thiol
+1GRT,glutathione reductase,WT,FAD,8,,,,-393,oxidized,
+1IUV,p-Hydroxybenzoate hydroxylase,WT,FAD,5,7.0,,,-165,oxidized,p-hydroxybenzoate
+1IUW,p-Hydroxybenzoate hydroxylase,WT,FAD,7.4,7.0,,,-165,oxidized,p-hydroxybenzoate
+1IUX,p-Hydroxybenzoate hydroxylase,WT,FAD,9.4,7.0,,,-165,oxidized,p-hydroxybenzoate
+1IUW,p-Hydroxybenzoate hydroxylase,WT,FAD,,7.0,,,-165,oxidized,p-hydroxybenzoate
+1PXA,p-Hydroxybenzoate hydroxylase,N300D,FAD,,7.0,,,-205,oxidized,p-hydroxybenzoate
+1PXB,p-Hydroxybenzoate hydroxylase,Y201F,FAD,,7.0,,,-164,oxidized,p-hydroxybenzoate
+1PXC,p-Hydroxybenzoate hydroxylase,Y385F,FAD,,7.0,,,-154,oxidized,p-hydroxybenzoate
+1K0L,p-Hydroxybenzoate hydroxylase,R220Q,FAD,7,7.0,,,-163,oxidized,no
+1YKJ,p-Hydroxybenzoate hydroxylase,A45G,FAD,8.5,7.0,,,-193,oxidized,p-hydroxybenzoate
+1FCB,L-Lactate Dehydrogenase(cytochrome b2),WT,FMN,6.5,7.0,71,-133,-31,oxidized,PYRUVIC ACID
+1LTD,L-Lactate Dehydrogenase(cytochrome b2),WT,FMN,6.5,7.0,-16.5,-60.3,-58,oxidized,sulfate ion
+1ZP4,methylene tetrahydrofolate reductase,E28Q,FAD,7.4,7.2,,,-207,oxidized,methyltetrahydafolate
+1B5T,methylene tetrahydrofolate reductase,WT,FAD,6,7.2,,,-237,oxidized,no
+1GWJ,Morphinone Reductase ,WT,FMN,6.2,7.0,,,-237,oxidized,no
+1NDH,NADPH-cytochrome B5 reductase,WT,FAD,6.8-8.0,7.0,,,-258,oxidized,no
+1I7P,NADPH-cytochrome B5 reductase,WT,FAD,7.5,,,,-268,oxidized,no
+1B1C,NADPH-cytochrome P450 reductase ,WT,FMN,6.8-7.2,7.0,-43,-280,-161.5,oxidized,NO
+1AMO,NADPH-cytochrome P450 reductase (FAD),WT,FAD,7,7.0,-290,-365,-328,oxidized,no
+1AMO,NADPH-cytochrome P450 reductase (FMN),WT,FMN,7,7.0,-110,-270,-190,oxidized,no
+2CND,Nitrate reductase,WT,FAD,,7.0,,,-287,oxidized,no
+1CNE,Nitrate reductase,C242S,FAD,,7.0,,,-279,oxidized,no
+1TLL,Nitric Oxide Synthase,WT,FAD,8.5,7.5,-304,-290,-297,oxidized,NADP
+1TLL,Nitric Oxide Synthase,WT,FMN,8.5,7.5,-179,-314,-246.5,oxidized,NO
+1NEC,Nitroreductase,WT,FMN,8.5,7.0,,,-190,oxidized,no
+1KQC,Nitroreductase,WT,FMN,4.8,,,,-190,oxidized,acetate
+1OYA,Old Yellow Enzyme 1,WT,FMN,8.3,7.0,-245,-215,-230,oxidized,no
+1OYC,Old Yellow Enzyme 1,WT,FMN,8.3,7.0,-245,-215,-230,hydroquinone,no
+1OYB,Old Yellow Enzyme 1,WT,FMN,8.3,7.0,,,-230,oxidized,p-hydroxybenzaldehyde
+1F8W,NADH Peroxidase ,R303M,FAD,7.2,7.0,,,-261,oxidized,S-OXY CYSTEINE
+1NHP,NADH Peroxidase ,C42A,FAD,7,7.0,,,-197,oxidized,no
+1NHQ,NADH Peroxidase ,C42S,FAD,7,7.0,,,-219,oxidized,no
+1NHR,NADH Peroxidase ,L40C,FAD,7,7.0,,,-235,oxidized,no
+1GVO,Pentaerythritol Tetranitrate Reductase,WT,FMN,6.2,7.0,,,-267,oxidized,"2,4-DINITROPHENOL"
+1GVQ,Pentaerythritol Tetranitrate Reductase,WT,FMN,6.2,7.0,,,-267,oxidized,CYCLOHEXANONE
+1GVR,Pentaerythritol Tetranitrate Reductase,WT,FMN,6.2,7.0,,,-267,oxidized,"2,4,6-TRINITROTOLUENE"
+1GVS,Pentaerythritol Tetranitrate Reductase,WT,FMN,6.2,7.0,,,-267,oxidized,PICRIC ACID
+1H50,Pentaerythritol Tetranitrate Reductase,WT,FMN,6.2,7.0,,,-267,oxidized,Acetate ion
+1H51,Pentaerythritol Tetranitrate Reductase,WT,FMN,6.2,7.0,,,-267,oxidized,THIOCYANATE ION
+1H60,Pentaerythritol Tetranitrate Reductase,WT,FMN,6,7.0,,,-267,oxidized,PROGESTERONE
+1H61,Pentaerythritol Tetranitrate Reductase,WT,FMN,6.5,7.0,,,-267,oxidized,"17,21-DIHYDROXYPREGNA-1,4-DIENE-3,11,20-TRIONE"
+1H62,Pentaerythritol Tetranitrate Reductase,WT,FMN,6.5,7.0,,,-267,oxidized,"ANDROSTA-1,4-DIENE-3,17-DIONE "
+1VYP,Pentaerythritol Tetranitrate Reductase,W102F,FMN,6.2,7.0,,,-241,oxidized,PICRIC ACID
+1VYS,Pentaerythritol Tetranitrate Reductase,W102Y,FMN,6.2,7.0,,,-236,oxidized,PICRIC ACID
+1VYR,Pentaerythritol Tetranitrate Reductase,WT,FMN,6.2,7.0,,,-267,oxidized,PICRIC ACID
+2ABA,Pentaerythritol Tetranitrate Reductase,WT,FMN,6.2,7.0,,,-267,hydroquinone,PROGESTERONE 
+2ABB,Pentaerythritol Tetranitrate Reductase,Y186F,FMN,6.2,7.0,,,-265,oxidized,
+2PIA,Phthalate Dioxygenase Reductase,WT,FMN,,,-174,-287,-230.5,oxidized,no
+1K87,proline dehydrogenase,WT,FAD,6,7.5,,,-91,oxidized,LACTIC ACID 
+1POW,Pyruvate Oxidase,WT,FAD,5.2,6.0,,,-300,oxidized,THIAMINE DIPHOSPHATE
+1Y9D,Pyruvate Oxidase,V265A,FAD,5.2,6.0,,,-300,oxidized,no
+1NEK,Succinate Dehydrogenase,WT,FAD,8.2,7.0,-127,-31,-79,oxidized,UBIQUINONE-2 
+1NEN,Succinate Dehydrogenase,WT,FAD,8.2,7.0,,,-79,oxidized,"2-[1-METHYLHEXYL]-4,6-DINITROPHENOL"
+1YKG,Sulfite reductase,WT,FMN,,,-130,-335,-232.5,oxidized,no
+1TDE,Thioredoxin Reductase,WT,FAD,7,7.0,,,-243,oxidized,no
+1TDF,Thioredoxin Reductase,WT,FAD,7,7.0,,,-243,oxidized,no
+1CL0,Thioredoxin Reductase,WT,FAD,8,7.0,,,-260,reduced,no
+1F6M,Thioredoxin Reductase,C135S,FAD,6,7.0,-306,-256,-280,oxidized,3-AMINOPYRIDINE-ADENINE DINUCLEOTIDE PHOSPHATE
+1O94,Trimethylamine Dehydrogenase,WT,FMN,6.5,7.0,44,36,40,oxidized,ADP (structural)
+1AOG,trypanothione reductase,WT,FAD,6,7.0,,,-273,oxidized,no
+1NDA,trypanothione reductase,WT,FAD,,7.0,,,-273,oxidized,no
+1MBT,UDP-N-acetylenolpyruvulglucosamine reductase,WT,FAD,8,7.0,,,-234,oxidized,no
+1UXY,UDP-N-acetylenolpyruvulglucosamine reductase,S229A,FAD,8,7.0,,,-238,oxidized,uridine-diphosphate-2(N-acetylglucosaminyl) butyric acid
+1I8T, UDP-Galactopyranose Mutase,WT,FAD,7.6,7.0,-100,37,-32,oxidized,no
+1QLT,vanillyl-alcohol oxidase,H422A,FAD,5.1,7.5,-17,-113,-65,oxidized,Acetate
+1E8G,vanillyl-alcohol oxidase,H61T,FAD,4.6,,,,-65,oxidized,"ALPHA,ALPHA,ALPHA-TRIFLUORO-P-CRESOL"
+1FO4,Xanthine dehydrogenase,WT,FAD,7.5,7.5,-270,-410,-340,oxidized,no
+1JRO,Xanthine Dehydrogenase,WT,FAD,8,8.0,-410,-484,-447,oxidized,no
+1FIQ,Xanthine oxidase,WT,FAD,,7.0,-290,-235,-263,oxidized,no

@@ -1,0 +1,9 @@
+echo "Building data..."
+cd ../../filter_scripts
+./get_sample.py ../learning/sample_data/sample_redox_potentials.csv sample_redox_potentials_distance.csv
+mv ./sample_redox_potentials_distance.csv ../learning/sample_data/. 
+echo "Putting finishing touches on data..."
+echo "Putting finishing touches on data..." | terminal-notifier -sound default
+python pair_redox_potentials.py sample_redox_potentials_distance.csv sample_redox_potentials.csv sample_dataset.csv
+echo "Sampling job complete..." | terminal-notifier -sound default
+echo "Finisehd building data."

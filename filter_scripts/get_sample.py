@@ -23,8 +23,7 @@ import sys
         analyze all PDB_IDs in the file.
 """
 if len(sys.argv) < 2:
-    raise ValueError("Usage: ./get_sample.py <PDB_IDS.csv: Required> \
-            <output_data.csv: Required> <sample_size: Optional>")
+    raise ValueError("Usage: ./get_sample.py <PDB_IDS.csv: Required> <output_data.csv: Required> <sample_size: Optional>")
 
 PDB_IDS = sys.argv[1]
 DATAFILENAME = sys.argv[2]
@@ -36,7 +35,7 @@ except:
             exists and is in correct format and try again.")
 
 SAMPLE_SIZE = len(proteins)
-if len(sys.argv) == 3:
+if len(sys.argv) == 4:
     try:
         SAMPLE_SIZE = int(sys.argv[3])
         print("Using sample size of: " + sys.argv[3])
