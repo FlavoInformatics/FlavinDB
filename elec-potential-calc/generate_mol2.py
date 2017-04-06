@@ -9,6 +9,9 @@ from chimera.selection import currentAtoms
 
 
 # TODO: wrap this in an easy-to-use-cli
+# TODO: make a bootstrap_chimera.sh to set chimera up with the requisite pkgs
+# TODO: pdb2pqr --ff=amber --apbs-input --ligand=600.A.mol2 1ahv 1ahv_group_a.pqr
+# REMARK: apbs <>.in -- make sure to change write pot dx <pqr> -> write pot flat <pqr>
 
 pdb_code = "1ahv"
  
